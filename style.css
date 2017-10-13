@@ -1,0 +1,47 @@
+body {
+	background-color: #fff;
+	padding: 0px;
+	margin: 0px;
+}
+
+form {
+  width: 300px;
+  display: inline-block;
+  position: relative;
+  
+}
+
+h1 {
+	text-align: center;
+	color: #000;
+}
+
+#back {
+  text-align: center;
+  color: #000;
+}
+#metode,
+#metode ul,
+#metode ul li,
+#metode  {
+  padding:5px;
+  border: 1px;
+  list-style: none;
+  line-height: 1;
+  position: relative;
+}
+
+
+#metode > ul> li{
+  width: 300px;
+  display: inline-block;
+  position: relative;
+}
+
+#metode{
+  text-align: center;
+  width: auto;
+  line-height: 1;
+  display: block;
+  margin: 0 auto;
+}
