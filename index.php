@@ -9,7 +9,7 @@
 </head>
 <style>
 input[type=text], select {
-    width: 100px;
+    width: 150px;
     position: relative;
     padding: 12px 20px;
     margin: 8px auto;
@@ -20,7 +20,7 @@ input[type=text], select {
 }
 
 input[type=submit] {
-    width: 100px;
+    width: 150px;
     position: relative;
     background-color: #4CAF50;
     color: white;
@@ -36,7 +36,7 @@ input[type=submit]:hover {
 }
 
 div {
-	width:300px;
+	width:150px;
 	margin: 10px auto;
     border-radius: 5px;
     background-color: #f2f2f2;
