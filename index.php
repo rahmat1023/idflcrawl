@@ -41,6 +41,7 @@ div {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+	text-align : center;
 }
 </style>
 <body>
@@ -50,6 +51,7 @@ div {
     <input type="text" id="fname" name="a" placeholder="Awal.."><br>
     <input type="submit" value="Cari">
   </form>
+	© Rahmat Alfianto 2017
 </div>
  
 </body>
