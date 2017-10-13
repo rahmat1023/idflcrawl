@@ -48,7 +48,7 @@ div {
 <div>
   <form action="crawl.php">
     <input type="text" id="fname" name="a" placeholder="Awal.."><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Cari">
   </form>
 </div>
  
