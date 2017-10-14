@@ -39,7 +39,7 @@ div.nav {
     background-color: #4CAF50;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: black;
     padding: 12px ;
     text-align: center;
     text-decoration: none;
