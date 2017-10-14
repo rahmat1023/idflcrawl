@@ -56,7 +56,7 @@ div.nav {
 // function to get webpage title
 ini_set('max_execution_time', 300);
 $a=$_GET['a'];
-$z=$a+1;
+$z=$a+99;
 $b=array();
 function getWeb($b,$a,$z) {
 	$hasil=array();
@@ -82,14 +82,12 @@ function getOwner($url) {
 	$pos_awal = strrpos($page, $string_awal)+4;  
 	$pos_akhir = strrpos($page, $string_akhir);  
 	$pos_ambil = $pos_akhir-$pos_awal;
-    if (strlen($pos_ambil)>100){
-        $owner = 'Kemungkinan Terhapus';
-    }
-    else{
-        $owner = substr($page, $pos_awal, $pos_ambil);    
-    }
 	
-  
+	$owner = substr($page, $pos_awal, $pos_ambil); 
+	$nf = 
+ 	if (strlen($owner)>100){
+		$owner='Kemungkinan Terhapus';
+	}
 	return $owner;
 }
 $x=getWeb($b,$a,$z);
