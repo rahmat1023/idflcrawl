@@ -67,7 +67,8 @@ function getWeb($b,$a,$z) {
 }
 
 function getTitle($url) {
-    $page = file_get_contents($ur    $title = preg_match('/<title[^>]*>(.*?)<\/title>/ims', $page, $match) ? $match[1] : null;
+    $page = file_get_contents($url);
+    $title = preg_match('/<title[^>]*>(.*?)<\/title>/ims', $page, $match) ? $match[1] : null;
     return $title;
 }
 
@@ -90,7 +91,7 @@ $x=getWeb($b,$a,$z);
 echo '<h1>File nomor '.$a.' sampai '.$z.'</h1>';
 echo '<div><table>';
 echo '	<tr>
-			<th>Nomor</th>
+		<th>Nomor</th>
     		<th>File Name</th>
     		<th>Owner</th>
   		</tr>';
