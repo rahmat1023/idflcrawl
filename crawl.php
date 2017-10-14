@@ -80,7 +80,6 @@ echo '	<tr>
 		echo '<td>'. getOwner($x[$i]).'</a></td>' ;
 		echo '</tr>';
 }
-echo '</ul>';
 include 'footer.php';
 ?>
 </html>
