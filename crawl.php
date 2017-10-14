@@ -56,11 +56,11 @@ div.nav {
 // function to get webpage title
 ini_set('max_execution_time', 300);
 $a=$_GET['a'];
-$z=$a+100;
+$z=$a+1;
 $b=array();
 function getWeb($b,$a,$z) {
 	$hasil=array();
-	for ($i=$a; $i<$z; $i++)
+	for ($i=$a; $i<=$z; $i++)
 	{
 		$hasil[$i] = 'http://file.idfl.me/file/'.$i;
 	}
@@ -82,11 +82,14 @@ function getOwner($url) {
 	$pos_awal = strrpos($page, $string_awal)+4;  
 	$pos_akhir = strrpos($page, $string_akhir);  
 	$pos_ambil = $pos_akhir-$pos_awal;
-	$owner = substr($page, $pos_awal, $pos_ambil);
-	$nf = strlen ($owner);
-	if ($nf > 100){
-		$owner = 'Kemungkinan Terhapus';
-	}
+    if (strlen($pos_ambil)>100){
+        $owner = 'Kemungkinan Terhapus';
+    }
+    else{
+        $owner = substr($page, $pos_awal, $pos_ambil);    
+    }
+	
+  
 	return $owner;
 }
 $x=getWeb($b,$a,$z);
@@ -94,13 +97,13 @@ $x=getWeb($b,$a,$z);
 echo '<h1>File nomor '.$a.' sampai '.$z.'</h1>';
 echo '<div><table>';
 echo '	<tr>
-		<th>Nomor</th>
+			<th>Nomor</th>
     		<th>File Name</th>
     		<th>Owner</th>
   		</tr>';
 	for ($i=$a;$i<=$z;$i++){
         $sentence=getTitle($x[$i]);
-        $word = 'File not found :(';
+        $word = 'File not found';
         if (strpos($sentence, $word) !== false) {
             echo '<tr>';
             echo '<td>'.$i.'</td>' ;
@@ -111,7 +114,7 @@ echo '	<tr>
         else{
             echo '<tr>';
             echo '<td>'.$i.'</td>' ;
-            echo '<td><a href="'.$x[$i]. '">'. $sentence.'</a></td>' ;
+            echo '<td><a href="'.$x[$i]. '">'.$sentence.'</a></td>' ;
             echo '<td>'. getOwner($x[$i]).'</a></td>' ;
             echo '</tr>'; 
         }
@@ -119,8 +122,8 @@ echo '	<tr>
 }
 echo '</table></div>';
 
-$prev=$a-100;
-$next=$a+100;
+$prev=$a-20;
+$next=$a+20;
 echo ' <div class="nav"><a href="crawl.php?a='.$prev.'" class="button">Sebelum</a>';
 echo ' <a href="index.php?" class="button">Home</a>';
 echo ' <a href="crawl.php?a='.$next.'" class="button">Sesudah</a></div>';
