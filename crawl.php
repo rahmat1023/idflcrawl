@@ -83,8 +83,7 @@ function getOwner($url) {
 	$pos_akhir = strrpos($page, $string_akhir);  
 	$pos_ambil = $pos_akhir-$pos_awal;
 	
-	$owner = substr($page, $pos_awal, $pos_ambil); 
-	$nf = 
+	$owner = substr($page, $pos_awal, $pos_ambil);
  	if (strlen($owner)>100){
 		$owner='Kemungkinan Terhapus';
 	}
