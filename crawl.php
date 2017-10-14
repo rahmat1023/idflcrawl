@@ -37,9 +37,9 @@ div.nav {
 
 .button {
     background-color: #4CAF50;
-    border: none;
+    border: 1px solid #dddddd;
     border-radius: 4px;
-    color: black;
+    color: white;
     padding: 12px ;
     text-align: center;
     text-decoration: none;
@@ -48,6 +48,9 @@ div.nav {
     cursor: pointer;
 }
 
+.button:hover {
+    background-color: #45a049;	
+}
 
 </style>
 </head>
