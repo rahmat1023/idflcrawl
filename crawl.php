@@ -28,6 +28,26 @@ h1 {
 	text-align: center;
 	color: #000;
 }
+
+div.nav {
+	text-align: center;
+	padding: 10px;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 12px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 10px;
+    cursor: pointer;
+}
+
+
 </style>
 </head>
 
@@ -35,7 +55,7 @@ h1 {
 // function to get webpage title
 ini_set('max_execution_time', 300);
 $a=$_GET['a'];
-$z=$a+19;
+$z=$a+1;
 $b=array();
 function getWeb($b,$a,$z) {
 	$hasil=array();
@@ -69,18 +89,25 @@ function getOwner($url) {
 $x=getWeb($b,$a,$z);
 // get web page title
 echo '<h1>File nomor '.$a.' sampai '.$z.'</h1>';
-echo '<table>';
+echo '<div><table>';
 echo '	<tr>
+			<th>Nomor</th>
     		<th>File Name</th>
     		<th>Owner</th>
   		</tr>';
 	for ($i=$a;$i<=$z;$i++){
 		echo '<tr>';
+		echo '<td>'.$i.'</td>' ;
 		echo '<td><a href="'.$x[$i]. '">'. getTitle($x[$i]).'</a></td>' ;
-		echo '<td>'. getOwner($x[$i]).'</td>' ;
+		echo '<td>'. getOwner($x[$i]).'</a></td>' ;
 		echo '</tr>';
 }
-echo '</table>';
-include 'footer.php';
+echo '</table></div>';
+
+$prev=$a-20;
+$next=$a+20;
+echo ' <div class="nav"><a href="crawl.php?a='.$prev.'" class="button">Sebelum</a>';
+echo ' <a href="index.php?" class="button">Home</a>';
+echo ' <a href="crawl.php?a='.$next.'" class="button">Sesudah</a></div>';
 ?>
 </html>
