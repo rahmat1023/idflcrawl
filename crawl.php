@@ -35,6 +35,11 @@ div.nav {
     padding: 10px;
 }
 
+div.copyright{
+    text-align: center;
+    padding: 10px;
+}
+
 .button {
     background-color: #4CAF50;
     border: none;
@@ -56,7 +61,7 @@ div.nav {
 // function to get webpage title
 ini_set('max_execution_time', 300);
 $a=$_GET['a'];
-$z=$a+1;
+$z=$a+19;
 $b=array();
 function getWeb($b,$a,$z) {
     $hasil=array();
@@ -119,11 +124,14 @@ echo '  <tr>
 }
 echo '</table></div>';
 
-$prev=$a-$z;
-$next=$a+$z;
+$prev=$a-100;
+$next=$a+100;
 echo ' <div class="nav"><a href="crawl.php?a='.$prev.'" class="button">Sebelum</a>';
 echo ' <a href="index.php?" class="button">Home</a>';
 echo ' <a href="crawl.php?a='.$next.'" class="button">Sesudah</a></div>';
-// include 'footer.php';
 ?>
+<div class="copyright">
+  © Rahmat Alfianto 2017
+</div>
+
 </html>
