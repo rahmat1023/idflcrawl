@@ -81,5 +81,6 @@ echo '	<tr>
 		echo '</tr>';
 }
 echo '</ul>';
+include 'footer.php';
 ?>
 </html>
