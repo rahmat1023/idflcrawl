@@ -100,14 +100,15 @@ echo '	<tr>
     		<th>Owner</th>
   		</tr>';
 	for ($i=$a;$i<=$z;$i++){
+		$temp = getTitle($x[$i];
 		echo '<tr>';
 		echo '<td>'.$i.'</td>' ;
-        if (getTitle($x[$i])=="File not found :("){
+        if (strpos ($temp,"File not found :(") !==false{
             echo '<td>To Be Updated</td>' ;
             echo '<td>Not Found</td>' ;
         }
 		else {
-            echo '<td><a href="'.$x[$i]. '">'. getTitle($x[$i]).'</a></td>' ;
+            echo '<td><a href="'.$x[$i]. '">'.$temp.'</a></td>' ;
 		    echo '<td>'. getOwner($x[$i]).'</a></td>' ;
 		echo '</tr>';
 }
