@@ -77,7 +77,7 @@ echo '	<tr>
 	for ($i=$a;$i<=$z;$i++){
 		echo '<tr>';
 		echo '<td><a href="'.$x[$i]. '">'. getTitle($x[$i]).'</a></td>' ;
-		echo '<td>'. getOwner($x[$i]).'</a></td>' ;
+		echo '<td>'. getOwner($x[$i]).'</td>' ;
 		echo '</tr>';
 }
 $prev=$a-20;
