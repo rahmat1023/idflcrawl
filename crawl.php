@@ -57,7 +57,7 @@ div.nav {
 ini_set('max_execution_time', 3600);
 $a=$_GET['a'];
 $b=$_GET['b'];
-$z=$a+$b;
+$z=$a+99;
 $b=array();
 function getWeb($b,$a,$z) {
 	$hasil=array();
