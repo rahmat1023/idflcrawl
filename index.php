@@ -48,8 +48,7 @@ div {
 	<h1>Rahmat's file.idfl.me Crawler</h1>
 <div>
   <form action="crawl.php">
-    <input type="text" id="fname" name="a" placeholder="Awal.."><br>
-    <input type="text" id="fname" name="c" placeholder="Banyak.."><br>	 
+    <input type="text" id="fname" name="a" placeholder="Awal.."><br> 
     <input type="submit" value="Cari">
   </form>
 	© Rahmat Alfianto 2017
