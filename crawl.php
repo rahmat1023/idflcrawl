@@ -96,11 +96,23 @@ echo '	<tr>
     		<th>Owner</th>
   		</tr>';
 	for ($i=$a;$i<=$z;$i++){
-		echo '<tr>';
-		echo '<td>'.$i.'</td>' ;
-		echo '<td><a href="'.$x[$i]. '">'. getTitle($x[$i]).'</a></td>' ;
-		echo '<td>'. getOwner($x[$i]).'</a></td>' ;
-		echo '</tr>';
+        $sentence=getTitle($x[$i]);
+        $word = 'File not found';
+        if (strpos($sentence, $word) !== false) {
+            echo '<tr>';
+            echo '<td>'.$i.'</td>' ;
+            echo '<td>Belum ada</td>' ;
+            echo '<td>Belum ada</td>' ;
+            echo '</tr>'; 
+            }
+        else{
+            echo '<tr>';
+            echo '<td>'.$i.'</td>' ;
+            echo '<td><a href="'.$x[$i]. '">'. getTitle($x[$i]).'</a></td>' ;
+            echo '<td>'. getOwner($x[$i]).'</a></td>' ;
+            echo '</tr>'; 
+        }
+		
 }
 echo '</table></div>';
 
