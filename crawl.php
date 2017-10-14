@@ -38,7 +38,7 @@ div.nav {
 .button {
     background-color: #4CAF50;
     border: 1px solid #dddddd;
-    border-radius: 4px;
+    border-radius: 10px;
     color: white;
     padding: 12px ;
     text-align: center;
