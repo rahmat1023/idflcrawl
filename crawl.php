@@ -97,15 +97,15 @@ echo '	<tr>
   		</tr>';
 	for ($i=$a;$i<=$z;$i++){
         $sentence=getTitle($x[$i]);
-//         $word = 'File not found :(';
-//         if (strcmp($sentence, $word) =0) {
-//             echo '<tr>';
-//             echo '<td>'.$i.'</td>' ;
-//             echo '<td>Belum ada</td>' ;
-//             echo '<td>Belum ada</td>' ;
-//             echo '</tr>'; 
-//             }
-//         else{
+        $word = 'File not found :(';
+        if (strpos($sentence, $word) !== false) {
+            echo '<tr>';
+            echo '<td>'.$i.'</td>' ;
+            echo '<td>Belum ada</td>' ;
+            echo '<td>Belum ada</td>' ;
+            echo '</tr>'; 
+            }
+        else{
             echo '<tr>';
             echo '<td>'.$i.'</td>' ;
             echo '<td><a href="'.$x[$i]. '">'. $sentence.'</a></td>' ;
