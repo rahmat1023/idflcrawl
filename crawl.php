@@ -18,7 +18,6 @@ th {
     border: 1px solid #dddddd;
     text-align: center;
     padding: 8px;
-    background-color: #4CAF50;
 }
 
 tr:nth-child(even) {
@@ -37,8 +36,8 @@ div.nav {
 
 .button {
     background-color: #4CAF50;
-    border: 1px solid #dddddd;
-    border-radius: 10px;
+    border: none;
+    border-radius: 4px;
     color: white;
     padding: 12px ;
     text-align: center;
@@ -48,9 +47,6 @@ div.nav {
     cursor: pointer;
 }
 
-.button:hover {
-    background-color: #45a049;	
-}
 
 </style>
 </head>
@@ -59,7 +55,7 @@ div.nav {
 // function to get webpage title
 ini_set('max_execution_time', 300);
 $a=$_GET['a'];
-$z=$a+19;
+$z=$a+1;
 $b=array();
 function getWeb($b,$a,$z) {
 	$hasil=array();
@@ -100,16 +96,10 @@ echo '	<tr>
     		<th>Owner</th>
   		</tr>';
 	for ($i=$a;$i<=$z;$i++){
-		$temp = getTitle($x[$i];
 		echo '<tr>';
 		echo '<td>'.$i.'</td>' ;
-        if (strpos ($temp,"File not found :(") !==false{
-            echo '<td>To Be Updated</td>' ;
-            echo '<td>Not Found</td>' ;
-        }
-		else {
-            echo '<td><a href="'.$x[$i]. '">'.$temp.'</a></td>' ;
-		    echo '<td>'. getOwner($x[$i]).'</a></td>' ;
+		echo '<td><a href="'.$x[$i]. '">'. getTitle($x[$i]).'</a></td>' ;
+		echo '<td>'. getOwner($x[$i]).'</a></td>' ;
 		echo '</tr>';
 }
 echo '</table></div>';
@@ -119,5 +109,6 @@ $next=$a+20;
 echo ' <div class="nav"><a href="crawl.php?a='.$prev.'" class="button">Sebelum</a>';
 echo ' <a href="index.php?" class="button">Home</a>';
 echo ' <a href="crawl.php?a='.$next.'" class="button">Sesudah</a></div>';
+// include 'footer.php';
 ?>
 </html>
