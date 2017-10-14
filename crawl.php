@@ -56,7 +56,8 @@ div.nav {
 // function to get webpage title
 ini_set('max_execution_time', 3600);
 $a=$_GET['a'];
-$z=$a+99;
+$b=$_GET['b'];
+$z=$a+$b;
 $b=array();
 function getWeb($b,$a,$z) {
 	$hasil=array();
