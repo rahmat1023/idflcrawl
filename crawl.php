@@ -58,11 +58,11 @@ function getOwner($url) {
 	$string_awal   = '<td>';  
 	$string_akhir   = '</td>';  
   
-	$pos_awal = strrpos($page, $string_awal);  
+	$pos_awal = strrpos($page, $string_awal)+4;  
 	$pos_akhir = strrpos($page, $string_akhir);  
 	$pos_ambil = $pos_akhir-$pos_awal;
 
-	$owner = substr($page, $pos_awal+4, $pos_ambil);
+	$owner = substr($page, $pos_awal, $pos_ambil);
   
 	return $owner;
 }
