@@ -102,8 +102,13 @@ echo '	<tr>
 	for ($i=$a;$i<=$z;$i++){
 		echo '<tr>';
 		echo '<td>'.$i.'</td>' ;
-		echo '<td><a href="'.$x[$i]. '">'. getTitle($x[$i]).'</a></td>' ;
-		echo '<td>'. getOwner($x[$i]).'</a></td>' ;
+        if (getTitle($x[$i])=="File not found :("){
+            echo '<td>To Be Updated</td>' ;
+            echo '<td>Not Found</td>' ;
+        }
+		else {
+            echo '<td><a href="'.$x[$i]. '">'. getTitle($x[$i]).'</a></td>' ;
+		    echo '<td>'. getOwner($x[$i]).'</a></td>' ;
 		echo '</tr>';
 }
 echo '</table></div>';
