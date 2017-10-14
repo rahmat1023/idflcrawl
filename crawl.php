@@ -67,8 +67,7 @@ function getWeb($b,$a,$z) {
 }
 
 function getTitle($url) {
-    $page = file_get_contents($url);
-    $title = preg_match('/<title[^>]*>(.*?)<\/title>/ims', $page, $match) ? $match[1] : null;
+    $page = file_get_contents($ur    $title = preg_match('/<title[^>]*>(.*?)<\/title>/ims', $page, $match) ? $match[1] : null;
     return $title;
 }
 
@@ -97,8 +96,8 @@ echo '	<tr>
   		</tr>';
 	for ($i=$a;$i<=$z;$i++){
         $sentence=getTitle($x[$i]);
-        $word = 'File not found';
-        if (strpos($sentence, $word) !== false) {
+        $word = 'File not found :(';
+        if (strcmp($sentence, $word) =0) {
             echo '<tr>';
             echo '<td>'.$i.'</td>' ;
             echo '<td>Belum ada</td>' ;
