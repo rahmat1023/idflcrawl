@@ -26,13 +26,13 @@ tr:nth-child(even) {
 }
 
 h1 {
-	text-align: center;
-	color: #000;
+    text-align: center;
+    color: #000;
 }
 
 div.nav {
-	text-align: center;
-	padding: 10px;
+    text-align: center;
+    padding: 10px;
 }
 
 .button {
@@ -56,15 +56,15 @@ div.nav {
 // function to get webpage title
 ini_set('max_execution_time', 300);
 $a=$_GET['a'];
-$z=$a+19;
+$z=$a+1;
 $b=array();
 function getWeb($b,$a,$z) {
-	$hasil=array();
-	for ($i=$a; $i<=$z; $i++)
-	{
-		$hasil[$i] = 'http://file.idfl.me/file/'.$i;
-	}
-	return $hasil;
+    $hasil=array();
+    for ($i=$a; $i<=$z; $i++)
+    {
+        $hasil[$i] = 'http://file.idfl.me/file/'.$i;
+    }
+    return $hasil;
 }
 
 function getTitle($url) {
@@ -76,29 +76,29 @@ function getTitle($url) {
 function getOwner($url) {
    $page = file_get_contents($url);  
   
-	$string_awal   = '<td>';  
-	$string_akhir   = '</td>';  
+    $string_awal   = '<td>';  
+    $string_akhir   = '</td>';  
   
-	$pos_awal = strrpos($page, $string_awal)+4;  
-	$pos_akhir = strrpos($page, $string_akhir);  
-	$pos_ambil = $pos_akhir-$pos_awal;
-	
-	$owner = substr($page, $pos_awal, $pos_ambil);
- 	if (strlen($owner)>100){
-		$owner='Kemungkinan Terhapus';
-	}
-	return $owner;
+    $pos_awal = strrpos($page, $string_awal)+4;  
+    $pos_akhir = strrpos($page, $string_akhir);  
+    $pos_ambil = $pos_akhir-$pos_awal;
+    
+    $owner = substr($page, $pos_awal, $pos_ambil);
+    if (strlen($owner)>100){
+        $owner='Kemungkinan Terhapus';
+    }
+    return $owner;
 }
 $x=getWeb($b,$a,$z);
 // get web page title
 echo '<h1>File nomor '.$a.' sampai '.$z.'</h1>';
 echo '<div><table>';
-echo '	<tr>
-			<th>Nomor</th>
-    		<th>File Name</th>
-    		<th>Owner</th>
-  		</tr>';
-	for ($i=$a;$i<=$z;$i++){
+echo '  <tr>
+            <th>Nomor</th>
+            <th>File Name</th>
+            <th>Owner</th>
+        </tr>';
+    for ($i=$a;$i<=$z;$i++){
         $sentence=getTitle($x[$i]);
         $word = 'File not found';
         if (strpos($sentence, $word) !== false) {
@@ -115,7 +115,7 @@ echo '	<tr>
             echo '<td>'. getOwner($x[$i]).'</a></td>' ;
             echo '</tr>'; 
         }
-		
+        
 }
 echo '</table></div>';
 
