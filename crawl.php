@@ -82,9 +82,12 @@ function getOwner($url) {
 	$pos_awal = strrpos($page, $string_awal)+4;  
 	$pos_akhir = strrpos($page, $string_akhir);  
 	$pos_ambil = $pos_akhir-$pos_awal;
-
-	$owner = substr($page, $pos_awal, $pos_ambil);
-  
+	if ($pos_ambil>50){
+		$owner = 'Kemungkinan Terhapus';
+	}
+	else{
+		$owner = substr($page, $pos_awal, $pos_ambil);
+	}
 	return $owner;
 }
 $x=getWeb($b,$a,$z);
