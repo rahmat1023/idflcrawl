@@ -61,7 +61,7 @@ div.copyright{
 // function to get webpage title
 ini_set('max_execution_time', 300);
 $a=$_GET['a'];
-$z=$a+19;
+$z=$a+99;
 $b=array();
 function getWeb($b,$a,$z) {
     $hasil=array();
